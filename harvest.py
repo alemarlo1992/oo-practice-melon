@@ -87,10 +87,24 @@ print(make_melon_type_lookup(melontypes))
 
 class Melon(object):
     """A melon in a melon harvest."""
+    def __init__(self, melon_type, shape_rating, color_rating, harvested_field, 
+                 harvested_by):
+    self.melon_type = melon_type
+    self.shape_rating = shape_rating
+    self.color_rating = color_rating
+    self.harvested_field = harvested_field
+    self.harvested_by = harvested_by
 
-    # Needs __init__ and is_sellable methods
+
+    def is_sellable(self,shape_rating, color_rating):
+        if shape_rating > 5 and color_rating > 5 and harvested_field != 3:
+            return True
+        else: 
+            return False 
+
 
 def make_melons(melon_types):
+
     """Returns a list of Melon objects."""
 
     # Fill in the rest
